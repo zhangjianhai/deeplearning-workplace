@@ -1,0 +1,79 @@
+*----------------------------------------------*
+for _ in range(n)   循环n次
+
+>>> x=[0.0 for _ in range(5)]
+
+#输出为5个元素的列表[0.0,0.0,0.0,0.0,0.0]
+*----------------------------------------------*
+print('weights\t:%s\nbias\t:%f\n' % (0.0, 0.0)) 打印函数print
+
+\t 为制表符
+\n 为回车
+%s 以字符串形式输出
+%f 以单字节形式输出
+*----------------------------------------------*
+zip 函数
+>>> a = [1,2,3]
+>>> b = [4,5,6]
+>>> c = [4,5,6,7,8]
+>>> zipped = zip(a,b)
+[(1, 4), (2, 5), (3, 6)]
+>>> zip(a,c)
+[(1, 4), (2, 5), (3, 6)]
+>>> zip(*zipped)
+[(1, 2, 3), (4, 5, 6)]
+*----------------------------------------------*
+最大池（max pooling）
+http://www.techweb.com.cn/network/system/2017-07-13/2556494.shtml
+http://blog.csdn.net/mao_xiao_feng/article/details/53453926
+*----------------------------------------------*
+y = np.random.choice(10, 64)	#生成（64,）的1~10的整数array；
+*----------------------------------------------*
+for kdx, z in enumerate(z_sample):
+#kdx为行号，z为该行的值，如z_sample是（64,100）,z为每一行，kdx为该行索引
+对z的修改将保存到z_sample
+*----------------------------------------------*
+# 设置 GPU 按需增长
+#gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
+#run_config = tf.ConfigProto(gpu_options) 
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+sess = tf.Session(config=config)
+*----------------------------------------------*
+numpy下的格式转变
+#a的默认格式为float64
+a=np.random.rand(3,2)
+#a的默认格式转变为np.float32
+a=np.random.rand(3,2).astype(np.float32)
+#或者为
+a=a.astype(np.float32)
+*----------------------------------------------*
+符号函数，非零元素为1，零元素为0
+tf.sign
+a=[[1,2,0],[3,0,1]]
+b=np.array(a)
+y=tf.sign(b)
+array([[1, 1, 0],
+       [1, 0, 1]])
+*----------------------------------------------*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
